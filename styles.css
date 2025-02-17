@@ -170,22 +170,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-title h1 {
-    font-size: 5em;
+    font-size: 7em; /* Increased from 5em */
     margin: 0;
     font-weight: 700;
+    letter-spacing: 0.02em; /* Add slight letter spacing */
+    position: relative; /* Add position relative */
 }
 
+/* Remove the previous h1::after rule */
+
 .title-underline {
-    width: 100px;
-    height: 3px;
+    position: relative;
+    width: 600px; /* Increased from 400px */
+    height: 4px;
+    margin: -15px auto 20px; /* Increased negative margin to move it higher */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between the two lines */
+}
+
+.title-underline::before,
+.title-underline::after {
+    content: '';
+    height: 100%;
     background-color: white;
-    margin: 10px auto;
+    position: absolute;
+}
+
+.title-underline::before {
+    width: 63%; /* Adjusted for longer width */
+    left: 0;
+}
+
+.title-underline::after {
+    width: 30%; /* Adjusted for longer width */
+    right: 0;
 }
 
 .main-title p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.8em; /* Increased from 1.2em */
+    margin-top: 20px; /* Increased from 10px */
     font-weight: 300;
+    line-height: 1.4;
 }
 
 /* Remove or comment out the old .header-text styles as they're no longer needed */
