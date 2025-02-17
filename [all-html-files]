@@ -11,6 +11,13 @@
     <!-- ...existing code... -->
 </head>
 <body>
+    <header>
+        <img src="img/devops-logo.png" alt="DevOps Logo" id="devops-logo" style="float: left;">
+        <button class="mobile-menu-button">↓</button>
+        <nav>
+            <!-- ...existing nav code... -->
+        </nav>
+    </header>
     <!-- Page content -->
 </body>
 </html>
