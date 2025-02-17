@@ -1,27 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 300; /* Light font */
     margin: 0;
     padding: 0;
     background-color: #ffffff;
 }
 header {
-    background-color: #000000; /* Nicer green color */
+    background-color: #ffffff;
     color: #fff;
-    padding: 5px 0;
+    padding: 5px 0; /* Reduced padding */
     text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #fff; /* White line to split header and body */
+    border-bottom: 1px solid #eee; /* Thinner border */
+    position: fixed; /* Change from relative to fixed */
+    width: 100%; /* Add width */
+    top: 0; /* Add top position */
+    z-index: 1000; /* Add this to ensure header stays on top */
+    height: 80px; /* Set explicit header height */
 }
 header img {
-    max-width: 80px;
+    max-width: 80px; /* Slightly smaller logo */
     vertical-align: middle;
     order: 1;
-    margin-left: 20px;
+    margin-left: 20px; /* Adjusted margin */
 }
 header nav {
     order: 2;
@@ -39,20 +50,48 @@ header nav ul {
 }
 header nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 10px; /* Adjusted margin between nav items */
 }
 header nav ul li a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px; /* Adjusted padding around links */
+    transition: all 0.3s ease;
+    position: relative;
 }
 header nav ul li a:hover {
-    background-color: #45a049; /* Slightly darker green for hover */
-    border-radius: 5px;
+    background-color: transparent; /* Remove green background */
+    color: #333; /* Slightly darker on hover */
+}
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #000000;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+header nav ul li a:hover::after {
+    width: 100%;
+}
+/* Style for active/selected page */
+header nav ul li a.active {
+    color: #000000;
+}
+header nav ul li a.active::after {
+    width: 100%;
 }
 main {
-    padding: 20px;
+    margin-top: 40px; /* Adjust to match new header height */
+    position: relative; /* Add this */
+    z-index: 1; /* Add this */
+    padding: 0; /* Remove padding */
+    margin: 0;
+    min-height: calc(100vh - 40px); /* Adjust for new header height */
+    padding-top: 0; /* Remove top padding */
     animation: fadeIn 2s ease-in-out;
 }
 footer {
@@ -90,18 +129,66 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700; /* Bold font */
 }
 .header-image {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
+    position: fixed; /* Change to fixed */
+    top: 40px; /* Adjust to match new header height */
+    left: 0;
+    width: 100vw; /* Use viewport width */
+    height: calc(100vh - 40px); /* Adjust for new header height */
     overflow: hidden;
+    z-index: -1; /* Ensure it stays behind other content */
 }
+
+.header-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+    z-index: 1;
+}
+
 .header-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    filter: blur(1px); /* Reduced blur since we have overlay */
+    -webkit-filter: blur(1px);
+    transform: scale(1.1); /* Prevent blur edges from showing */
 }
+
+.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Ensure title appears above the overlay */
+}
+
+.main-title h1 {
+    font-size: 5em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.title-underline {
+    width: 100px;
+    height: 3px;
+    background-color: white;
+    margin: 10px auto;
+}
+
+.main-title p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Remove or comment out the old .header-text styles as they're no longer needed */
 .header-text {
     position: absolute;
     top: 50%;
@@ -135,11 +222,12 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     transform: translate(-50%, 0);
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker background */
     border-radius: 10px;
     width: 80%;
     color: white;
     font-size: 1.2em; /* Increased font size */
+    z-index: 2; /* Ensure contact info appears above the overlay */
 }
 .contact-info h3 {
     font-size: 2.5em; /* Increased font size */

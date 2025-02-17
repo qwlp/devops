@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Get current page URL
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // Add active class to current page link
+    const navLinks = document.querySelectorAll('header nav ul li a');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
     const button = document.querySelector('button');
     button.addEventListener('click', function() {
         alert('Welcome to DMU Cambodia Club DevOps!');
