@@ -1,310 +1,332 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300; /* Light font */
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 300; /* Light font */
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
 }
 header {
-    background-color: #ffffff;
-    color: #fff;
-    padding: 5px 0; /* Reduced padding */
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee; /* Thinner border */
-    position: fixed; /* Change from relative to fixed */
-    width: 100%; /* Add width */
-    top: 0; /* Add top position */
-    z-index: 1000; /* Add this to ensure header stays on top */
-    height: 80px; /* Set explicit header height */
+  background-color: #ffffff;
+  color: #fff;
+  padding: 5px 0; /* Reduced padding */
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee; /* Thinner border */
+  position: fixed; /* Change from relative to fixed */
+  width: 100%; /* Add width */
+  top: 0; /* Add top position */
+  z-index: 1000; /* Add this to ensure header stays on top */
+  height: 80px; /* Set explicit header height */
 }
 header img {
-    max-width: 80px; /* Slightly smaller logo */
-    vertical-align: middle;
-    order: 1;
-    margin-left: 20px; /* Adjusted margin */
+  max-width: 80px; /* Slightly smaller logo */
+  vertical-align: middle;
+  order: 1;
+  margin-left: 20px; /* Adjusted margin */
 }
 header nav {
-    order: 2;
-    flex-grow: 1;
-    text-align: right;
+  order: 2;
+  flex-grow: 1;
+  text-align: right;
 }
 header h1 {
-    display: inline;
-    margin: 0;
-    padding-left: 10px;
+  display: inline;
+  margin: 0;
+  padding-left: 10px;
 }
 header nav ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 header nav ul li {
-    display: inline;
-    margin: 0 10px; /* Adjusted margin between nav items */
+  display: inline;
+  margin: 0 10px; /* Adjusted margin between nav items */
 }
 header nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    padding: 10px 20px; /* Adjusted padding around links */
-    transition: all 0.3s ease;
-    position: relative;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px; /* Adjusted padding around links */
+  transition: all 0.3s ease;
+  position: relative;
 }
 header nav ul li a:hover {
-    background-color: transparent; /* Remove green background */
-    color: #333; /* Slightly darker on hover */
+  background-color: transparent; /* Remove green background */
+  color: #333; /* Slightly darker on hover */
 }
 header nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: #000000;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #000000;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 header nav ul li a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 /* Style for active/selected page */
 header nav ul li a.active {
-    color: #000000;
+  color: #000000;
 }
 header nav ul li a.active::after {
-    width: 100%;
+  width: 100%;
 }
 main {
-    margin-top: 40px; /* Adjust to match new header height */
-    position: relative; /* Add this */
-    z-index: 1; /* Add this */
-    padding: 0; /* Remove padding */
-    margin: 0;
-    min-height: calc(100vh - 40px); /* Adjust for new header height */
-    padding-top: 0; /* Remove top padding */
-    animation: fadeIn 2s ease-in-out;
+  margin-top: 40px; /* Adjust to match new header height */
+  position: relative; /* Add this */
+  z-index: 1; /* Add this */
+  padding: 0; /* Remove padding */
+  margin: 0;
+  min-height: calc(100vh - 40px); /* Adjust for new header height */
+  padding-top: 0; /* Remove top padding */
+  animation: fadeIn 2s ease-in-out;
 }
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: #555;
+  background-color: #555;
 }
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .fade-in {
-    animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700; /* Bold font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700; /* Bold font */
 }
 .header-image {
-    position: fixed; /* Change to fixed */
-    top: 40px; /* Adjust to match new header height */
-    left: 0;
-    width: 100vw; /* Use viewport width */
-    height: calc(100vh - 40px); /* Adjust for new header height */
-    overflow: hidden;
-    z-index: -1; /* Ensure it stays behind other content */
+  position: fixed; /* Change to fixed */
+  top: 40px; /* Adjust to match new header height */
+  left: 0;
+  width: 100vw; /* Use viewport width */
+  height: calc(100vh - 40px); /* Adjust for new header height */
+  overflow: hidden;
+  z-index: -1; /* Ensure it stays behind other content */
 }
-.header-image, .contact-section {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
+.header-image,
+.contact-section {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
 }
 
-.header-image.active, .contact-section.active {
-    opacity: 1;
-    z-index: 1;
+.header-image.active,
+.contact-section.active {
+  opacity: 1;
+  z-index: 1;
 }
 .header-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+  z-index: 1;
 }
 .header-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: blur(1px); /* Reduced blur since we have overlay */
-    -webkit-filter: blur(1px);
-    transform: scale(1.1); /* Prevent blur edges from showing */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px); /* Reduced blur since we have overlay */
+  -webkit-filter: blur(1px);
+  transform: scale(1.1); /* Prevent blur edges from showing */
 }
 .main-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 2; /* Ensure title appears above the overlay */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2; /* Ensure title appears above the overlay */
 }
 .main-title h1 {
-    font-size: 7em; /* Increased from 5em */
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: 0.02em; /* Add slight letter spacing */
-    position: relative; /* Add position relative */
+  font-size: 7em; /* Increased from 5em */
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em; /* Add slight letter spacing */
+  position: relative; /* Add position relative */
 }
 /* Remove the previous h1::after rule */
 .title-underline {
-    position: relative;
-    width: 600px; /* Increased from 400px */
-    height: 4px;
-    margin: -15px auto 20px; /* Increased negative margin to move it higher */
-    display: flex;
-    justify-content: center;
-    gap: 15px; /* Space between the two lines */
+  position: relative;
+  width: 90%; /* Changed to relative width */
+  max-width: 600px; /* Maximum width on larger screens */
+  height: 4px;
+  margin: -15px auto 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 .title-underline::before,
 .title-underline::after {
-    content: '';
-    height: 100%;
-    background-color: white;
-    position: absolute;
+  content: "";
+  height: 100%;
+  background-color: white;
+  position: absolute;
 }
 .title-underline::before {
-    width: 63%; /* Adjusted for longer width */
-    left: 0;
+  width: 70%; /* Adjusted for longer width */
+  left: 0;
 }
 .title-underline::after {
-    width: 30%; /* Adjusted for longer width */
-    right: 0;
+  width: 21%; /* Adjusted for longer width */
+  right: 0;
 }
 .main-title p {
-    font-size: 1.8em; /* Increased from 1.2em */
-    margin-top: 20px; /* Increased from 10px */
-    font-weight: 300;
-    line-height: 1.4;
+  font-size: 1.8em; /* Increased from 1.2em */
+  margin-top: 20px; /* Increased from 10px */
+  font-weight: 300;
+  line-height: 1.4;
 }
 /* Remove or comment out the old .header-text styles as they're no longer needed */
 .header-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-    width: 80%;
-    max-width: 800px;
-    font-size: 1.2em;
-    max-height: none;
-    overflow-y: visible;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  width: 80%;
+  max-width: 800px;
+  font-size: 1.2em;
+  max-height: none;
+  overflow-y: visible;
 }
 .header-text h2 {
-    font-size: 2.5em;
-    margin-bottom: 25px;
-    font-weight: 600;
-    color: #ffffff;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #ffffff;
 }
 .header-text p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
 }
 .contact-info {
-    position: absolute;
-    bottom: 10%; /* Position from bottom instead of top */
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.6); /* Slightly darker background */
-    border-radius: 10px;
-    width: 80%;
-    color: white;
-    font-size: 1.2em; /* Increased font size */
-    z-index: 2; /* Ensure contact info appears above the overlay */
+  position: absolute;
+  bottom: 10%; /* Position from bottom instead of top */
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker background */
+  border-radius: 10px;
+  width: 80%;
+  color: white;
+  font-size: 1.2em; /* Increased font size */
+  z-index: 2; /* Ensure contact info appears above the overlay */
 }
 .contact-info h3 {
-    font-size: 2.5em; /* Increased font size */
-    margin-bottom: 10px;
+  font-size: 2.5em; /* Increased font size */
+  margin-bottom: 10px;
 }
 .contact-info p {
-    font-size: 1.5em; /* Increased font size */
-    line-height: 1.5;
+  font-size: 1.5em; /* Increased font size */
+  line-height: 1.5;
 }
 .contact-info a {
-    color: #45a049;
-    text-decoration: none;
-    font-weight: bold;
+  color: #45a049;
+  text-decoration: none;
+  font-weight: bold;
 }
 .contact-info a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .mobile-menu-button {
     display: none;
     background: none;
     border: none;
-    font-size: 30px; /* Increased size */
-    padding: 10px 15px;
+    font-size: 24px;
     cursor: pointer;
+    padding: 10px;
     position: absolute;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
-    color: #000;
+    top: 20px;
+    z-index: 1000;
+    color: #333;
 }
+
 @media screen and (max-width: 768px) {
     .mobile-menu-button {
         display: block;
     }
 
     header nav {
-        display: none; /* Hide by default */
-        position: absolute;
+        display: none;
+        position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
-        background: white;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;
     }
 
     header nav.active {
-        display: block; /* Show when active */
+        display: block !important;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     header nav ul {
@@ -317,49 +339,41 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
         margin: 0;
         text-align: center;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     header nav ul li a {
         display: block;
         padding: 15px 20px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.3s;
     }
 
-    .main-title h1 {
-        font-size: 3em; /* Even smaller for mobile */
-    }
-
-    .title-underline {
-        width: 80%; /* Responsive width */
-        max-width: 300px;
-        margin: -10px auto 15px;
-    }
-
-    .main-title p {
-        font-size: 1em;
-        padding: 0 20px;
-        margin-top: 15px;
-    }
-
-    .contact-info {
-        width: 90%;
-        padding: 15px;
-    }
-
-    .contact-info h3 {
-        font-size: 1.8em;
-    }
-
-    .contact-info p {
-        font-size: 1.1em;
+    header nav ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
     }
 }
 @media screen and (max-width: 480px) {
-    .main-title h1 {
-        font-size: 2.5em;
-    }
+  .main-title h1 {
+    font-size: 3.5em;
+  }
 
-    .main-title p {
-        font-size: 0.9em;
-    }
+  .main-title p {
+    font-size: 1.2em;
+  }
+
+  .title-underline {
+    width: 100%;
+    gap: 10px;
+    margin: -5px auto 20px; /* Adjusted margin-top from -15px to -5px to move underline down */
+  }
+
+  .title-underline::before {
+    width: 68%;
+  }
+
+  .title-underline::after {
+    width: 23%;
+  }
 }

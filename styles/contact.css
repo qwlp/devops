@@ -1,126 +1,151 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100vh;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .contact-section {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-image: url('../img/devopspresent.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-    overflow: hidden;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  box-sizing: border-box;
+  background-image: url("../img/devopspresent.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
 }
 
 .contact-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 50%;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
 }
 
 .contact-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .contact-section::before,
+  .contact-section::after {
+    left: 0;
     right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(0.5px);
+  }
 }
 
 .contact-overlay {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 2rem;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: clamp(1rem, 4vw, 2rem);
+  width: 90%;
+  margin: 0;
+  text-align: left;
 }
 
 .contact-section h2 {
-    font-size: 3.5rem;
-    color: white;
-    margin: 0;
-    line-height: 1.2;
-    font-weight: bold;
-}
-
-.highlight {
-    color: #FFD8A2;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+  font-weight: bold;
+  text-align: left;
 }
 
 .contact-description {
-    color: white;
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    max-width: 600px;
-    line-height: 1.6;
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-top: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.highlight {
+  color: #ffd8a2;
+}
+
+.contact-description {
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-top: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 .contact-form {
-    margin-top: 2rem;
-    max-width: 500px;
+  margin-top: 2rem;
+  max-width: 500px;
 }
 
 .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.9);
-    font-size: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
 }
 
 .contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
+  min-height: 150px;
+  resize: vertical;
 }
 
 .contact-form button {
-    padding: 1rem 2rem;
-    background: #FFD700;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  padding: 1rem 2rem;
+  background: #ffd700;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
-    background: #FFC800;
+  background: #ffc800;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .contact-section h2 {
-        font-size: 2.5rem;
-    }
-    
-    .contact-description {
-        font-size: 1rem;
-    }
-    
-    .contact-overlay {
-        padding: 1rem;
-    }
+  .contact-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+  }
+
+  .contact-overlay {
+    padding: 1rem;
+  }
 }
