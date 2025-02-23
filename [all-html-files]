@@ -19,5 +19,6 @@
         </nav>
     </header>
     <!-- Page content -->
+    <script src="scripts.js"></script>
 </body>
 </html>
